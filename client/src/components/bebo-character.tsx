@@ -4,9 +4,13 @@ import happyBebo from "@assets/image_1757854717588.png";
 import techBebo from "@assets/image_1757854723009.png";
 import focusedBebo from "@assets/image_1757854731039.png";
 import wealthyBebo from "@assets/image_1757854758052.png";
+import bepo5 from "@assets/bepo5.jpg";
+import bepo6 from "@assets/bebo6.jpg";
+import bepo7 from "@assets/bebo7.jpg";
+import bepo8 from "@assets/bebo8.jpg";
 
 interface BeboCharacterProps {
-  variant: "happy" | "tech" | "focused" | "wealthy";
+  variant: "happy" | "tech" | "focused" | "wealthy" | "astronaut" | "family" | "beach" | "fitness";
   size?: "small" | "medium" | "large";
   showSparkles?: boolean;
   className?: string;
@@ -34,6 +38,14 @@ export default function BeboCharacter({
         return focusedBebo;
       case "wealthy":
         return wealthyBebo;
+      case "astronaut":
+        return bepo5;
+      case "family":
+        return bepo6;
+      case "beach":
+        return bepo8;
+      case "fitness":
+        return bepo7;
       default:
         return happyBebo;
     }

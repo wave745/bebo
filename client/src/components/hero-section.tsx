@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Coins, TrendingUp } from "lucide-react";
+import { Copy, Coins } from "lucide-react";
+import { useState } from "react";
 import BeboCharacter from "./bebo-character";
 import beboLogo from "@assets/ChatGPT_Image_Sep_14__2025__01_35_07_PM-removebg-preview_1757855683291.png";
 import happyBebo from "@assets/image_1757854717588.png";
@@ -9,6 +10,19 @@ import focusedBebo from "@assets/image_1757854731039.png";
 import wealthyBebo from "@assets/image_1757854758052.png";
 
 export default function HeroSection() {
+  const [copied, setCopied] = useState(false);
+  const contractAddress = "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM";
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(contractAddress);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden crypto-grid">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
@@ -43,21 +57,52 @@ export default function HeroSection() {
         <img src={focusedBebo} alt="Focused BEBO" className="w-10 h-10 filter drop-shadow-lg" />
       </motion.div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
-        <div className="max-w-4xl mx-auto">
+      <div className="container mx-auto px-4 text-center relative z-20 flex flex-col justify-center min-h-screen">
+        <div className="max-w-4xl mx-auto -mt-8">
           {/* Main BEBO Logo */}
           <motion.div 
-            className="mb-8"
+            className="mb-1 relative z-20"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <img 
               src={beboLogo} 
               alt="BEBO Character" 
-              className="w-80 md:w-96 h-auto mx-auto filter drop-shadow-2xl"
+              className="w-80 md:w-96 h-auto mx-auto filter drop-shadow-2xl relative z-20"
               data-testid="img-bebo-logo"
             />
+          </motion.div>
+
+          {/* Contract Address Card */}
+          <motion.div 
+            className="mb-1 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 max-w-md mx-auto">
+              <div className="flex items-center justify-between">
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm text-muted-foreground mb-1">Contract Address</p>
+                  <p className="font-mono text-sm text-white truncate" data-testid="contract-address">
+                    {contractAddress}
+                  </p>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={copyToClipboard}
+                  className="ml-3 text-white hover:bg-white/20 transition-colors"
+                  data-testid="copy-contract-button"
+                >
+                  <Copy className="w-4 h-4" />
+                  {copied && (
+                    <span className="ml-1 text-xs">Copied!</span>
+                  )}
+                </Button>
+              </div>
+            </div>
           </motion.div>
           
           <motion.p 
@@ -92,36 +137,8 @@ export default function HeroSection() {
               <Coins className="mr-2" size={20} />
               Buy BEBO Now
             </Button>
-            <Button 
-              variant="outline"
-              className="bg-card border border-border text-foreground px-8 py-4 text-lg font-semibold hover:bg-card/80 transition-all hover:scale-105"
-              data-testid="button-chart-hero"
-            >
-              <TrendingUp className="mr-2" size={20} />
-              View Chart
-            </Button>
           </motion.div>
 
-          {/* Token Stats */}
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-          >
-            <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <div className="text-2xl font-bold text-primary" data-testid="text-current-price">$0.0001234</div>
-              <div className="text-muted-foreground">Current Price</div>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <div className="text-2xl font-bold text-accent" data-testid="text-market-cap">$2.5M</div>
-              <div className="text-muted-foreground">Market Cap</div>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
-              <div className="text-2xl font-bold text-primary" data-testid="text-holders">12,847</div>
-              <div className="text-muted-foreground">Holders</div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
