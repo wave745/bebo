@@ -163,7 +163,7 @@ export default function CharacterGallery() {
       {selectedCharacter && (
         <Dialog open={!!selectedCharacter} onOpenChange={() => setSelectedCharacter(null)}>
           <DialogContent 
-            className="max-w-lg w-[95vw] sm:w-[90vw] md:w-[80vw] max-h-[90vh] overflow-y-auto mx-4 sm:mx-0"
+            className="max-w-lg w-[90vw] sm:w-[90vw] md:w-[80vw] max-h-[85vh] overflow-y-auto"
             style={{
               background: selectedCharacter.bgGradient,
               border: `2px solid ${selectedCharacter.borderColor}`,
@@ -203,23 +203,23 @@ export default function CharacterGallery() {
             />
             
             {/* Content */}
-            <div className="relative z-10 p-4 sm:p-6">
-              <DialogHeader className="text-center mb-4 sm:mb-6">
-                <DialogTitle className="text-xl sm:text-2xl font-bold gradient-text">
+            <div className="relative z-10 p-3 sm:p-6">
+              <DialogHeader className="text-center mb-3 sm:mb-6">
+                <DialogTitle className="text-lg sm:text-2xl font-bold gradient-text">
                   {selectedCharacter.title}
                 </DialogTitle>
               </DialogHeader>
               
-              <div className="flex flex-col items-center space-y-4 sm:space-y-6">
+              <div className="flex flex-col items-center space-y-3 sm:space-y-6">
                 <div className="flex justify-center">
                   <BeboCharacter 
                     variant={selectedCharacter.variant}
-                    size="large"
+                    size="medium"
                     showSparkles={selectedCharacter.variant === "happy"}
                   />
                 </div>
                 
-                <p className="text-center text-base sm:text-lg text-muted-foreground px-2">
+                <p className="text-center text-sm sm:text-lg text-muted-foreground px-1">
                   {selectedCharacter.description}
                 </p>
               </div>
