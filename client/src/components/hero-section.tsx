@@ -1,35 +1,46 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Coins, TrendingUp, Rocket } from "lucide-react";
+import { Coins, TrendingUp } from "lucide-react";
 import BeboCharacter from "./bebo-character";
 import beboLogo from "@assets/ChatGPT_Image_Sep_14__2025__01_35_07_PM-removebg-preview_1757855683291.png";
+import happyBebo from "@assets/image_1757854717588.png";
+import techBebo from "@assets/image_1757854723009.png";
+import focusedBebo from "@assets/image_1757854731039.png";
+import wealthyBebo from "@assets/image_1757854758052.png";
 
 export default function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden crypto-grid">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
       
-      {/* Floating background elements */}
+      {/* Floating BEBO characters */}
       <motion.div 
-        className="absolute top-20 left-10 text-accent opacity-50"
-        animate={{ y: [0, -20, 0] }}
+        className="absolute top-20 left-10 opacity-60"
+        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Coins size={48} />
+        <img src={happyBebo} alt="Happy BEBO" className="w-16 h-16 filter drop-shadow-lg" />
       </motion.div>
       <motion.div 
-        className="absolute top-40 right-20 text-primary opacity-50"
-        animate={{ y: [0, -15, 0] }}
+        className="absolute top-40 right-20 opacity-60"
+        animate={{ y: [0, -15, 0], rotate: [0, -5, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Rocket size={36} />
+        <img src={techBebo} alt="Tech BEBO" className="w-12 h-12 filter drop-shadow-lg" />
       </motion.div>
       <motion.div 
-        className="absolute bottom-40 left-20 text-accent opacity-50"
-        animate={{ scale: [1, 1.2, 1] }}
+        className="absolute bottom-40 left-20 opacity-60"
+        animate={{ scale: [1, 1.2, 1], rotate: [0, 10, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
-        <TrendingUp size={36} />
+        <img src={wealthyBebo} alt="Wealthy BEBO" className="w-14 h-14 filter drop-shadow-lg" />
+      </motion.div>
+      <motion.div 
+        className="absolute bottom-20 right-10 opacity-50"
+        animate={{ y: [0, -10, 0], scale: [1, 1.1, 1] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <img src={focusedBebo} alt="Focused BEBO" className="w-10 h-10 filter drop-shadow-lg" />
       </motion.div>
 
       <div className="container mx-auto px-4 text-center relative z-10">

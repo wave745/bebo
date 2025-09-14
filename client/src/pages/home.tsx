@@ -1,4 +1,3 @@
-import Navigation from "@/components/navigation";
 import HeroSection from "@/components/hero-section";
 import CharacterGallery from "@/components/character-gallery";
 import Footer from "@/components/footer";
@@ -6,7 +5,6 @@ import Footer from "@/components/footer";
 export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden">
-      <Navigation />
       <HeroSection />
       
       {/* About Section */}
