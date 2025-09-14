@@ -86,16 +86,16 @@ export default function CharacterGallery() {
     <>
       <section id="gallery" className="py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Meet BEBO</h2>
-            <p className="text-xl text-muted-foreground">Experience all sides of our beloved character</p>
+          <div className="text-center mb-8 sm:mb-12 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 gradient-text">Meet BEBO</h2>
+            <p className="text-lg sm:text-xl text-muted-foreground">Experience all sides of our beloved character</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto px-4 sm:px-0">
             {characters.map((character, index) => (
               <motion.div
                 key={character.id}
-                className="rounded-xl p-8 transition-all hover:scale-105 cursor-pointer group relative overflow-hidden"
+                className="rounded-xl p-4 sm:p-6 md:p-8 transition-all hover:scale-105 cursor-pointer group relative overflow-hidden"
                 onClick={() => setSelectedCharacter(character)}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -143,15 +143,15 @@ export default function CharacterGallery() {
                   }}
                 />
                 <div className="text-center relative z-10">
-                  <div className="mb-4 group-hover:scale-110 transition-transform">
+                  <div className="mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
                     <BeboCharacter 
                       variant={character.variant} 
                       size="medium"
                       showSparkles={character.variant === "happy"}
                     />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">{character.title}</h3>
-                  <p className="text-muted-foreground">{character.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-primary mb-1 sm:mb-2">{character.title}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground">{character.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -163,7 +163,7 @@ export default function CharacterGallery() {
       {selectedCharacter && (
         <Dialog open={!!selectedCharacter} onOpenChange={() => setSelectedCharacter(null)}>
           <DialogContent 
-            className="max-w-lg w-[95vw] max-h-[90vh] overflow-y-auto"
+            className="max-w-lg w-[95vw] sm:w-[90vw] md:w-[80vw] max-h-[90vh] overflow-y-auto mx-4 sm:mx-0"
             style={{
               background: selectedCharacter.bgGradient,
               border: `2px solid ${selectedCharacter.borderColor}`,
@@ -203,14 +203,14 @@ export default function CharacterGallery() {
             />
             
             {/* Content */}
-            <div className="relative z-10 p-6">
-              <DialogHeader className="text-center mb-6">
-                <DialogTitle className="text-2xl font-bold gradient-text">
+            <div className="relative z-10 p-4 sm:p-6">
+              <DialogHeader className="text-center mb-4 sm:mb-6">
+                <DialogTitle className="text-xl sm:text-2xl font-bold gradient-text">
                   {selectedCharacter.title}
                 </DialogTitle>
               </DialogHeader>
               
-              <div className="flex flex-col items-center space-y-6">
+              <div className="flex flex-col items-center space-y-4 sm:space-y-6">
                 <div className="flex justify-center">
                   <BeboCharacter 
                     variant={selectedCharacter.variant}
@@ -219,7 +219,7 @@ export default function CharacterGallery() {
                   />
                 </div>
                 
-                <p className="text-center text-lg text-muted-foreground">
+                <p className="text-center text-base sm:text-lg text-muted-foreground px-2">
                   {selectedCharacter.description}
                 </p>
               </div>

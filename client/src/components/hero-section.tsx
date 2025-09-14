@@ -57,8 +57,8 @@ export default function HeroSection() {
         <img src={focusedBebo} alt="Focused BEBO" className="w-10 h-10 filter drop-shadow-lg" />
       </motion.div>
 
-      <div className="container mx-auto px-4 text-center relative z-20 flex flex-col justify-center min-h-screen">
-        <div className="max-w-4xl mx-auto -mt-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20 flex flex-col justify-center min-h-screen">
+        <div className="max-w-4xl mx-auto -mt-4 sm:-mt-8">
           {/* Main BEBO Logo */}
           <motion.div 
             className="mb-1 relative z-20"
@@ -69,7 +69,7 @@ export default function HeroSection() {
             <img 
               src={beboLogo} 
               alt="BEBO Character" 
-              className="w-80 md:w-96 h-auto mx-auto filter drop-shadow-2xl relative z-20"
+              className="w-64 sm:w-80 md:w-96 h-auto mx-auto filter drop-shadow-2xl relative z-20"
               data-testid="img-bebo-logo"
             />
           </motion.div>
@@ -81,11 +81,11 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 max-w-md mx-auto">
-              <div className="flex items-center justify-between">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 sm:p-4 max-w-sm sm:max-w-md mx-auto">
+              <div className="flex items-center justify-between gap-2">
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-muted-foreground mb-1">Contract Address</p>
-                  <p className="font-mono text-sm text-white truncate" data-testid="contract-address">
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-1">Contract Address</p>
+                  <p className="font-mono text-xs sm:text-sm text-white truncate" data-testid="contract-address">
                     {contractAddress}
                   </p>
                 </div>
@@ -93,12 +93,12 @@ export default function HeroSection() {
                   variant="ghost"
                   size="sm"
                   onClick={copyToClipboard}
-                  className="ml-3 text-white hover:bg-white/20 transition-colors"
+                  className="ml-2 text-white hover:bg-white/20 transition-colors flex-shrink-0"
                   data-testid="copy-contract-button"
                 >
-                  <Copy className="w-4 h-4" />
+                  <Copy className="w-3 h-3 sm:w-4 sm:h-4" />
                   {copied && (
-                    <span className="ml-1 text-xs">Copied!</span>
+                    <span className="ml-1 text-xs hidden sm:inline">Copied!</span>
                   )}
                 </Button>
               </div>
@@ -106,7 +106,7 @@ export default function HeroSection() {
           </motion.div>
           
           <motion.p 
-            className="text-xl md:text-2xl text-muted-foreground mb-4"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -115,7 +115,7 @@ export default function HeroSection() {
           </motion.p>
           
           <motion.p 
-            className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto"
+            className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -125,16 +125,16 @@ export default function HeroSection() {
           </motion.p>
 
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Button 
-              className="bg-primary text-primary-foreground px-8 py-4 text-lg font-bold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
+              className="bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-bold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg w-full sm:w-auto"
               data-testid="button-buy-hero"
             >
-              <Coins className="mr-2" size={20} />
+              <Coins className="mr-2" size={18} />
               Buy BEBO Now
             </Button>
           </motion.div>

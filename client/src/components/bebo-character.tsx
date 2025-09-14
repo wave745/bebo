@@ -23,9 +23,9 @@ export default function BeboCharacter({
   className = "" 
 }: BeboCharacterProps) {
   const sizeClasses = {
-    small: "w-16 h-16",
-    medium: "w-32 h-32",
-    large: "w-64 h-64"
+    small: "w-12 h-12 sm:w-16 sm:h-16",
+    medium: "w-24 h-24 sm:w-32 sm:h-32",
+    large: "w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64"
   };
 
   const getCharacterImage = () => {
