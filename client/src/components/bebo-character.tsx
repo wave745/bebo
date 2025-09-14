@@ -1,5 +1,9 @@
 import { motion } from "framer-motion";
 import { Star, Laptop, Smartphone, DollarSign, Code } from "lucide-react";
+import happyBebo from "@assets/image_1757854717588.png";
+import techBebo from "@assets/image_1757854723009.png";
+import focusedBebo from "@assets/image_1757854731039.png";
+import wealthyBebo from "@assets/image_1757854758052.png";
 
 interface BeboCharacterProps {
   variant: "happy" | "tech" | "focused" | "wealthy";
@@ -20,68 +24,38 @@ export default function BeboCharacter({
     large: "w-64 h-64"
   };
 
+  const getCharacterImage = () => {
+    switch (variant) {
+      case "happy":
+        return happyBebo;
+      case "tech":
+        return techBebo;
+      case "focused":
+        return focusedBebo;
+      case "wealthy":
+        return wealthyBebo;
+      default:
+        return happyBebo;
+    }
+  };
+
   const sparkles = showSparkles && variant === "happy";
 
   return (
     <div className={`relative inline-block ${className}`}>
       <motion.div 
-        className={`${sizeClasses[size]} mx-auto bg-primary/20 rounded-full flex items-center justify-center bebo-glow relative`}
+        className={`${sizeClasses[size]} mx-auto rounded-full flex items-center justify-center relative`}
         whileHover={{ scale: 1.05 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        {/* Base BEBO Character - Green Bear */}
-        <div className="text-6xl relative">
-          🐻
-          <div className="absolute inset-0 text-6xl" style={{ color: '#90C695' }}>🐻</div>
-        </div>
+        {/* Base BEBO Character - Actual Image */}
+        <img 
+          src={getCharacterImage()} 
+          alt={`BEBO ${variant} character`}
+          className="w-full h-full object-contain filter drop-shadow-lg"
+          data-testid={`img-bebo-${variant}`}
+        />
 
-        {/* Variant-specific overlays */}
-        {variant === "tech" && (
-          <>
-            <div className="absolute top-2 text-2xl">👓</div>
-            <div className="absolute bottom-2 text-lg">
-              <Laptop size={20} className="text-primary" />
-            </div>
-          </>
-        )}
-
-        {variant === "focused" && (
-          <>
-            <div className="absolute text-2xl">
-              <Smartphone size={24} className="text-muted-foreground" />
-            </div>
-            <div className="absolute top-4 right-4 text-orange-500">
-              <Code size={16} />
-            </div>
-          </>
-        )}
-
-        {variant === "wealthy" && (
-          <>
-            <div className="absolute text-accent text-xl">🔗</div>
-            <motion.div 
-              className="absolute -top-2 -left-2 text-accent"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 1, repeat: Infinity }}
-            >
-              <DollarSign size={20} />
-            </motion.div>
-            <motion.div 
-              className="absolute -top-2 -right-2 text-accent"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 1, repeat: Infinity, delay: 0.5 }}
-            >
-              <DollarSign size={20} />
-            </motion.div>
-            <motion.div 
-              className="absolute bottom-0 text-accent"
-              animate={{ y: [0, -5, 0] }}
-              transition={{ duration: 1, repeat: Infinity, delay: 1 }}
-            >
-              <DollarSign size={20} />
-            </motion.div>
-          </>
-        )}
 
         {/* Sparkles for happy variant */}
         {sparkles && (

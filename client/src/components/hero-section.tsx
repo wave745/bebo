@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Coins, TrendingUp, Rocket } from "lucide-react";
 import BeboCharacter from "./bebo-character";
+import beboLogo from "@assets/ChatGPT_Image_Sep_14__2025__01_35_07_PM-removebg-preview_1757855683291.png";
 
 export default function HeroSection() {
   return (
@@ -33,23 +34,20 @@ export default function HeroSection() {
 
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Main BEBO Character */}
+          {/* Main BEBO Logo */}
           <motion.div 
             className="mb-8"
-            animate={{ y: [0, -20, 0] }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
-            <BeboCharacter variant="happy" size="large" showSparkles />
+            <img 
+              src={beboLogo} 
+              alt="BEBO Character" 
+              className="w-80 md:w-96 h-auto mx-auto filter drop-shadow-2xl"
+              data-testid="img-bebo-logo"
+            />
           </motion.div>
-
-          <motion.h1 
-            className="text-6xl md:text-8xl font-black mb-6 gradient-text"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            BEBO
-          </motion.h1>
           
           <motion.p 
             className="text-xl md:text-2xl text-muted-foreground mb-4"
