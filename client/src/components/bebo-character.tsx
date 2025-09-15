@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { Star, Laptop, Smartphone, DollarSign, Code } from "lucide-react";
-import happyBebo from "@assets/image_1757854717588.png";
-import techBebo from "@assets/image_1757854723009.png";
-import focusedBebo from "@assets/image_1757854731039.png";
-import wealthyBebo from "@assets/image_1757854758052.png";
-import bepo5 from "@assets/bepo5.jpg";
-import bepo6 from "@assets/bebo6.jpg";
-import bepo7 from "@assets/bebo7.jpg";
-import bepo8 from "@assets/bebo8.jpg";
+import happyBebo from "@assets/2_1757912317318.png";
+import techBebo from "@assets/3_1757912690099.png";
+import focusedBebo from "@assets/1_1757912317315.png";
+import wealthyBebo from "@assets/10_1757912690103.png";
+import bepo5 from "@assets/9_1757912690102.png";
+import bepo6 from "@assets/6_1757912690100.png";
+import bepo7 from "@assets/7_1757912690102.png";
+import bepo8 from "@assets/8_1757912690102.png";
 
 interface BeboCharacterProps {
   variant: "happy" | "tech" | "focused" | "wealthy" | "astronaut" | "family" | "beach" | "fitness";
@@ -24,7 +24,7 @@ export default function BeboCharacter({
 }: BeboCharacterProps) {
   const sizeClasses = {
     small: "w-12 h-12 sm:w-16 sm:h-16",
-    medium: "w-24 h-24 sm:w-32 sm:h-32",
+    medium: "w-28 h-28 sm:w-36 sm:h-36",
     large: "w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64"
   };
 
