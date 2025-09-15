@@ -45,13 +45,23 @@ export default function Navigation() {
             </button>
           </div>
 
-          {/* Desktop Buy Button */}
-          <Button 
-            className="hidden md:block bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
-            data-testid="button-buy-desktop"
-          >
-            Buy BEBO
-          </Button>
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button 
+              onClick={() => window.open('https://x.com/i/communities/1967425385273991584', '_blank')}
+              variant="outline"
+              className="font-semibold"
+              data-testid="button-join-desktop"
+            >
+              Join
+            </Button>
+            <Button 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
+              data-testid="button-buy-desktop"
+            >
+              Buy BEBO
+            </Button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -80,6 +90,14 @@ export default function Navigation() {
             >
               Gallery
             </button>
+            <Button 
+              onClick={() => window.open('https://x.com/i/communities/1967425385273991584', '_blank')}
+              variant="outline"
+              className="w-full font-semibold"
+              data-testid="button-join-mobile"
+            >
+              Join
+            </Button>
             <Button 
               className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold"
               data-testid="button-buy-mobile"
