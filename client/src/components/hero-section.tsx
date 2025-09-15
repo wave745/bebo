@@ -26,7 +26,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden crypto-grid">
+    <section className="flex justify-center pt-6 pb-2 relative overflow-hidden crypto-grid">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
       
       {/* Floating BEBO characters */}
@@ -59,7 +59,7 @@ export default function HeroSection() {
         <img src={focusedBebo} alt="Focused BEBO" className="w-10 h-10 filter drop-shadow-lg" />
       </motion.div>
 
-      <div className="container mx-auto px-3 sm:px-6 lg:px-8 text-center relative z-20 flex flex-col justify-center min-h-screen">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 text-center relative z-20 flex flex-col justify-start">
         <div className="max-w-4xl mx-auto -mt-2 sm:-mt-8">
           {/* Main BEBO Logo */}
           <motion.div 

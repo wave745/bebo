@@ -84,7 +84,7 @@ export default function CharacterGallery() {
 
   return (
     <>
-      <section id="gallery" className="py-20">
+      <section id="gallery" className="pt-4 pb-16 sm:pt-6 sm:pb-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 sm:mb-12 px-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 gradient-text">Meet BEBO</h2>
