@@ -135,7 +135,7 @@ export default function HeroSection() {
             <motion.img 
               src={buyButton}
               alt="Buy BEBO"
-              className="w-48 h-auto cursor-pointer hover:scale-105 transition-transform"
+              className="w-64 sm:w-72 h-auto cursor-pointer hover:scale-105 transition-transform"
               data-testid="button-buy-hero"
               animate={{ scale: [1, 1.05, 1] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
