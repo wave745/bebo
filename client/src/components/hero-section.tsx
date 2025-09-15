@@ -9,6 +9,7 @@ import techBebo from "@assets/image_1757854723009.png";
 import focusedBebo from "@assets/image_1757854731039.png";
 import wealthyBebo from "@assets/image_1757854758052.png";
 import joinButton from "@assets/image-removebg-preview (5)_1757908898368.png";
+import buyButton from "@assets/image-removebg-preview (6)_1757909739462.png";
 
 export default function HeroSection() {
   const [copied, setCopied] = useState(false);
@@ -131,13 +132,14 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <Button 
-              className="bg-primary text-primary-foreground px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-bold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg w-full sm:w-auto"
+            <motion.img 
+              src={buyButton}
+              alt="Buy BEBO"
+              className="w-48 h-auto cursor-pointer hover:scale-105 transition-transform"
               data-testid="button-buy-hero"
-            >
-              <Coins className="mr-2" size={16} />
-              Buy BEBO Now
-            </Button>
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            />
           </motion.div>
 
         </div>
