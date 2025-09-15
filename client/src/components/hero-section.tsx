@@ -8,6 +8,7 @@ import happyBebo from "@assets/image_1757854717588.png";
 import techBebo from "@assets/image_1757854723009.png";
 import focusedBebo from "@assets/image_1757854731039.png";
 import wealthyBebo from "@assets/image_1757854758052.png";
+import joinButton from "@assets/image-removebg-preview (5)_1757908898368.png";
 
 export default function HeroSection() {
   const [copied, setCopied] = useState(false);
@@ -130,6 +131,15 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
+            <motion.img 
+              src={joinButton}
+              alt="Join Community"
+              className="w-32 h-auto cursor-pointer hover:scale-105 transition-transform"
+              onClick={() => window.open('https://x.com/i/communities/1967425385273991584', '_blank')}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              data-testid="button-join-hero"
+            />
             <Button 
               className="bg-primary text-primary-foreground px-4 sm:px-8 py-2 sm:py-4 text-sm sm:text-lg font-bold hover:bg-primary/90 transition-all hover:scale-105 shadow-lg w-full sm:w-auto"
               data-testid="button-buy-hero"
