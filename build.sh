@@ -8,13 +8,7 @@ cd ..
 echo "🔨 Building server..."
 npm run build:server
 
-echo "📁 Creating dist/public directory..."
-mkdir -p dist/public
-
-echo "📋 Copying client files to server's expected location..."
-cp -r client/dist/* dist/public/
-
 echo "✅ Build completed successfully!"
-echo "📦 Client built in: client/dist/"
+echo "📦 Client built directly to: server/public/"
 echo "📦 Server built in: dist/index.js"
-echo "📁 Static files copied to: dist/public/"
+echo "📁 Static files ready at: server/public/"
