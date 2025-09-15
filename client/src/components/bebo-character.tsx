@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, Laptop, Smartphone, DollarSign, Code } from "lucide-react";
+import { Star } from "lucide-react";
 import happyBebo from "@assets/2_1757912317318.png";
 import techBebo from "@assets/3_1757912690099.png";
 import focusedBebo from "@assets/1_1757912317315.png";
