@@ -1,0 +1,29 @@
+# Ignore server files for static deployment
+server/
+shared/
+dist/
+node_modules/
+*.log
+.env
+.env.local
+.env.production
+.env.development
+
+# Ignore development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Git files
+.git/
+.gitignore
+
+# Ignore build artifacts
+build/
+coverage/
