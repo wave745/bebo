@@ -86,8 +86,8 @@ export default function CharacterGallery() {
     <>
       <section id="gallery" className="pt-1 pb-16 sm:pt-0 sm:pb-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-4 sm:mb-6 px-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 gradient-text">Meet BEBO</h2>
+          <div className="text-center mb-2 sm:mb-2 px-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-2 gradient-text">Meet BEBO</h2>
             <p className="text-lg sm:text-xl text-muted-foreground">Experience all sides of our beloved character</p>
           </div>
 
