@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: '../server/public',
+    outDir: '../dist/public',
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'terser',
