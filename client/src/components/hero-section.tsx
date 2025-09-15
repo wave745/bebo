@@ -117,7 +117,7 @@ export default function HeroSection() {
           </motion.p>
           
           <motion.p 
-            className="text-sm sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-12 max-w-2xl mx-auto px-4"
+            className="text-sm sm:text-lg md:text-xl text-muted-foreground mb-3 sm:mb-4 max-w-2xl mx-auto px-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
