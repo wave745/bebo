@@ -26,7 +26,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="flex justify-center pt-6 pb-2 relative overflow-hidden crypto-grid">
+    <section className="flex justify-center pt-6 pb-0 relative overflow-hidden crypto-grid">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
       
       {/* Floating BEBO characters */}
