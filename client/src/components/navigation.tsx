@@ -50,7 +50,7 @@ export default function Navigation() {
             <Button 
               onClick={() => window.open('https://x.com/i/communities/1967425385273991584', '_blank')}
               variant="outline"
-              className="font-semibold"
+              className="font-semibold animate-bounce"
               data-testid="button-join-desktop"
             >
               Join
@@ -93,7 +93,7 @@ export default function Navigation() {
             <Button 
               onClick={() => window.open('https://x.com/i/communities/1967425385273991584', '_blank')}
               variant="outline"
-              className="w-full font-semibold"
+              className="w-full font-semibold animate-bounce"
               data-testid="button-join-mobile"
             >
               Join
