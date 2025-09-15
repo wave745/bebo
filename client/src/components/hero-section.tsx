@@ -1,14 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Copy, Coins } from "lucide-react";
+import { Copy } from "lucide-react";
 import { useState } from "react";
-import BeboCharacter from "./bebo-character";
 import beboLogo from "@assets/ChatGPT_Image_Sep_14__2025__01_35_07_PM-removebg-preview_1757855683291.png";
 import happyBebo from "@assets/2_1757912317318.png";
 import techBebo from "@assets/3_1757912317320.png";
 import focusedBebo from "@assets/1_1757912317315.png";
 import wealthyBebo from "@assets/10_1757912317324.png";
-import joinButton from "@assets/image-removebg-preview (5)_1757908898368.png";
 import buyButton from "@assets/image-removebg-preview (6)_1757909739462.png";
 
 export default function HeroSection() {
