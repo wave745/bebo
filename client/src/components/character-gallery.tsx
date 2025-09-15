@@ -169,8 +169,6 @@ export default function CharacterGallery() {
               border: `2px solid ${selectedCharacter.borderColor}`,
             }}
           >
-            {console.log('Selected Character:', selectedCharacter)}
-            
             {/* Animated background glow */}
             <motion.div
               className="absolute inset-0 opacity-30 rounded-lg"
