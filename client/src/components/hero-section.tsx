@@ -35,28 +35,28 @@ export default function HeroSection() {
         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img src={happyBebo} alt="Happy BEBO" className="w-24 h-24 filter drop-shadow-lg" />
+        <img src={happyBebo} alt="Happy BEBO" className="w-16 h-16 filter drop-shadow-lg" />
       </motion.div>
       <motion.div 
         className="absolute top-40 right-20 opacity-60"
         animate={{ y: [0, -15, 0], rotate: [0, -5, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img src={techBebo} alt="Tech BEBO" className="w-20 h-20 filter drop-shadow-lg" />
+        <img src={techBebo} alt="Tech BEBO" className="w-12 h-12 filter drop-shadow-lg" />
       </motion.div>
       <motion.div 
         className="absolute bottom-40 left-20 opacity-60"
         animate={{ scale: [1, 1.2, 1], rotate: [0, 10, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img src={wealthyBebo} alt="Wealthy BEBO" className="w-22 h-22 filter drop-shadow-lg" />
+        <img src={wealthyBebo} alt="Wealthy BEBO" className="w-14 h-14 filter drop-shadow-lg" />
       </motion.div>
       <motion.div 
         className="absolute bottom-20 right-10 opacity-50"
         animate={{ y: [0, -10, 0], scale: [1, 1.1, 1] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
-        <img src={focusedBebo} alt="Focused BEBO" className="w-18 h-18 filter drop-shadow-lg" />
+        <img src={focusedBebo} alt="Focused BEBO" className="w-10 h-10 filter drop-shadow-lg" />
       </motion.div>
 
       <div className="container mx-auto px-3 sm:px-6 lg:px-8 text-center relative z-20 flex flex-col justify-start">
